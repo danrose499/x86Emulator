@@ -1,0 +1,45 @@
+Turbo Assembler	 Version 4.1	    03/01/20 55:51:47	    Page 1
+sample.ASM
+
+
+
+      1					  assume cs:code,ds:code
+      2	0000			     code segment
+      3					  org 100h
+      4	0100			     start:
+      5				     ; CODE BEGIN
+      6	0100  B0 01			  mov al,1
+      7	0102  02 C0			      add al,al
+      8	0104  02 C0			      add al,al
+      9	0106  02 C0			      add al,al
+     10	0108  02 C0			      add al,al
+     11	010A  02 C0			      add al,al
+     12	010C  02 C0			      add al,al
+     13	010E  02 C0			      add al,al
+     14	0110  02 C0			      add al,al
+     15	0112  CD 20			  int 20h
+     16				     ; CODE END
+     17	0114			     code ends
+     18					  end start
+Turbo Assembler	 Version 4.1	    03/01/20 55:51:47	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "03/01/20"
+??FILENAME			  Text	 "sample  "
+??TIME				  Text	 "55:51:47"
+??VERSION			  Number 040A
+@CPU				  Text	 0101H
+@CURSEG				  Text	 CODE
+@FILENAME			  Text	 SAMPLE
+@WORDSIZE			  Text	 2
+START				  Near	 CODE:0100
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+CODE				  16  0114 Para	  none
+

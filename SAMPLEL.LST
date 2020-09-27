@@ -1,0 +1,41 @@
+Turbo Assembler	 Version 2.5	    03/22/20 21:05:52	    Page 1
+samplel.asm
+
+
+
+      1					  assume cs:code,ds:code
+      2	0000			     code segment
+      3					  org 100h
+      4	0100			     start:
+      5				     ; CODE BEGIN
+      6	0100  2B C0			      sub ax,ax
+      7	0102  B9 000A			  mov cx,10
+      8	0105  03 C1			l:    add ax,cx
+      9	0107  E2 FC			      loop l
+     10	0109  CD 20			      int 20h
+     11				     ; CODE END
+     12	010B			     code ends
+     13					  end start
+Turbo Assembler	 Version 2.5	    03/22/20 21:05:52	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "03/22/20"
+??FILENAME			  Text	 "samplel "
+??TIME				  Text	 "21:05:52"
+??VERSION			  Number 0205
+@CPU				  Text	 0101H
+@CURSEG				  Text	 CODE
+@FILENAME			  Text	 SAMPLEL
+@WORDSIZE			  Text	 2
+L				  Near	 CODE:0105
+START				  Near	 CODE:0100
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+CODE				  16  010B Para	  none
+

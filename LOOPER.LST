@@ -1,0 +1,48 @@
+Turbo Assembler	 Version 2.5	    04/02/20 23:26:21	    Page 1
+looper.ASM
+
+
+
+      1					  assume cs:code,ds:code
+      2	0000			     code segment
+      3					  org 100h
+      4	0100			     start:
+      5				     ; CODE BEGIN
+      6	0100  2B C0			  sub ax,ax ; Loop adding numbers 1 to 10 and storing in AX
+      7	0102  B9 0001			  mov cx,1
+      8	0105  03 C1		       l: add ax,cx
+      9	0107  41			  inc cx
+     10	0108  83 F9 0B			  cmp cx,11
+     11	010B  75 F8			  jnz l
+     12	010D  2B DB			  sub bx,bx ; Loop adding 10 to	1 and storing in BX
+     13	010F  B9 000A			  mov cx,10
+     14	0112  03 D9		      j:  add bx,cx
+     15	0114  E2 FC			  loop j
+     16	0116  CD 20			  int 20h
+     17				     ; CODE END
+     18	0118			     code ends
+     19					  end start
+Turbo Assembler	 Version 2.5	    04/02/20 23:26:21	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "04/02/20"
+??FILENAME			  Text	 "looper  "
+??TIME				  Text	 "23:26:21"
+??VERSION			  Number 0205
+@CPU				  Text	 0101H
+@CURSEG				  Text	 CODE
+@FILENAME			  Text	 LOOPER
+@WORDSIZE			  Text	 2
+J				  Near	 CODE:0112
+L				  Near	 CODE:0105
+START				  Near	 CODE:0100
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+CODE				  16  0118 Para	  none
+
