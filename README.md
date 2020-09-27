@@ -1,6 +1,6 @@
 This is a simple Assembly emulator, intended as an educational tool to demonstrate how different x86 instructions affect the registers.
 The program reads a binary assembly file line-by-line into a switch which supports many of the common used instructions.
-Also included are several assembly test files, text and binary form.
+Also included are several assembly test files, in text, binary, and lst form (for seeing how the different instructions relate to their respective opcdes).
 
 In order to change the file you would like to emulate, edit the C++ and change line 28
 such that the name of the file you would like to test is in the quotes.
