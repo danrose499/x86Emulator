@@ -18,14 +18,14 @@ ZF,SF,CF.
 For example, the default file, __SAMPLE.COM__ contains the following instructions:
 ```Assembly
   mov al,1
-	 add al,al
-	 add al,al
-	 add al,al
-	 add al,al
-	 add al,al
-	 add al,al
-	 add al,al
-	 add al,al
+  add al,al
+  add al,al
+  add al,al
+  add al,al
+  add al,al
+  add al,al
+  add al,al
+  add al,al
   int 20h
  ```
  As seen above, the program loads the AL register with a value of 1 and adds the contents of the register with itself 8 times. Aftter the 8th addition, the value should be 256, but, as AL is an 8-bit register, it overflows and the flags are set accordingly. When emulating the file in __emulator.cpp__, the following output is produced:
