@@ -17,7 +17,7 @@ ZF,SF,CF.
  
 For example, the default file, __SAMPLE.COM__ contains the following instructions:
 ```Assembly
-  mov al,1
+  mov al, 1
   add al,al
   add al,al
   add al,al
@@ -28,10 +28,11 @@ For example, the default file, __SAMPLE.COM__ contains the following instruction
   add al,al
   int 20h
  ```
- As seen above, the program loads the AL register with a value of 1 and adds the contents of the register with itself 8 times. Aftter the 8th addition, the value should be 256, but, as AL is an 8-bit register, it overflows and the flags are set accordingly. When emulating the file in __emulator.cpp__, the following output is produced:
+As seen above, the program loads the AL register with a value of 1 and adds the contents of the register with itself 8 times. Aftter the 8th addition, the value should be 256, but, as AL is an 8-bit register, it overflows and the flags are set accordingly. When emulating the file in __emulator.cpp__, the following output is produced:
  
- Displaying state of registers after each instruction:
-```
+ ```
+Displaying state of registers after each instruction:
+
 Update #1 (IP: 256)
 AX: 0000000000000000 = 0
 BX: 0000000000000000 = 0
