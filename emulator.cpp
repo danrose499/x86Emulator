@@ -6,6 +6,7 @@
 #include<cstdlib>
 #include<bitset>
 #include<iomanip>
+
 #define AX regs[0]
 #define CX regs[1]
 #define DX regs[2]
@@ -14,11 +15,14 @@
 #define BP regs[5]
 #define SI regs[6]
 #define DI regs[7]
+
 using namespace std;
+
 void updateFlags(unsigned short r16, unsigned short *flags);
 void updateFlags(unsigned char r8, unsigned short *flags);
 void updateCarry(unsigned short r16, unsigned short imm16, unsigned short *FLAGS, bool plus);
 void updateCarry(unsigned char r8, unsigned char imm8, unsigned short *FLAGS, bool plus);
+
 int main() {
 	int start = 0x100;
 	unsigned char mb[1000000];
@@ -1105,12 +1109,14 @@ void updateFlags(unsigned short r16, unsigned short *flags) {
 	if(r16==0) {*flags = (*flags | 0x40);} //Sets zero flag
 	else {*flags = (*flags & 0xFFBF);} //Clears zero flag
 }
+
 void updateFlags(unsigned char r8, unsigned short *flags) {
 	if((r8 & 0x80)==0x80) {*flags = (*flags | 0x80);} //Sets sign flag
 	else {*flags = (*flags & 0xFF7F);} //Clears sign flag
 	if(r8==0) {*flags = (*flags | 0x40);} //Sets zero flag
 	else {*flags = (*flags & 0xFFBF);} //Clears zero flag
 }
+
 void updateCarry(unsigned short r16, unsigned short imm16, unsigned short *flags, bool plus) {
 	if(plus==true){ //Addition
 		if(0xFFFF > (r16+imm16)) {*flags=(*flags & 0xFFFE);} //Clears carry flag
@@ -1121,6 +1127,7 @@ void updateCarry(unsigned short r16, unsigned short imm16, unsigned short *flags
 		else {*flags = (*flags | 1);} //Sets carry flag
 	}
 }
+
 void updateCarry(unsigned char r8, unsigned char imm8, unsigned short *flags, bool plus) {
 	if(plus==true){ //Addition
 		if(0xFF > (r8+imm8)) {*flags=(*flags & 0xFFFE);} //Clears carry flag
