@@ -205,4 +205,3 @@ The full file:
 ```
 
 Daniel Rosenthal
-4/2/2020
