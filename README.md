@@ -1,6 +1,5 @@
 ## x86 Assembly Emulator
 
-#### Intro:
 This is a simple Assembly emulator, intended as an educational tool to demonstrate how different x86 instructions affect the registers. The program reads a binary assembly file bit-by-bit into a switch which supports many of the common used instructions. Also included are several assembly test files, in text, binary, and lst formats (for seeing how the different instructions relate to their respective opcdes).
 #### Getting Started:
 
