@@ -1,6 +1,6 @@
 ## x86 Assembly Emulator
 
-This is a simple Assembly emulator, intended as an educational tool to demonstrate how different x86 instructions affect the registers. The program reads a binary assembly file bit-by-bit into a switch which supports many of the common used instructions. Also included are several assembly test files, in text, binary, and lst formats (for seeing how the different instructions relate to their respective opcdes).
+This is a simple Assembly emulator, intended as an educational tool to demonstrate how different x86 instructions affect the registers. The program reads a binary executable assembly file bit-by-bit into a switch which supports many of the common used instructions. Also included are several assembly test files, in text, binary, and lst formats (for seeing how the different instructions relate to their respective opcdes).
 #### Getting Started:
 
 In order to change the file you would like to emulate, edit the file __emulator.cpp__ and change line 28 such that the name of the binary file you would like to test is in the quotes. The file currently set to open is __SAMPLE.COM__, as seen below.
